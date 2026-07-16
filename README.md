@@ -7,7 +7,7 @@ Use it to remove system noise, narrow logs by date, and extract only the player 
 ## ✨ Features
 
 - **Fully local** — runs entirely in your web browser, with no uploads or external services.
-- **Paste or upload logs** — supports raw log text or `.txt` log files.
+- **Paste or upload logs** — supports raw log text or `.log` log files.
 - **System message removal** — filters welcome text, rules tips, traffic alerts, death notices, bot announcements, and console spam.
 - **Name whitelist** — keep only lines containing one or more player names.
 - **Date range filtering** — include logs only from the selected start/end dates.
@@ -18,7 +18,7 @@ Use it to remove system noise, narrow logs by date, and extract only the player 
 
 1. Keep `index.html`, `main.css`, and `main.js` together in the same folder.
 2. Open `index.html` in your browser.
-3. Paste your raw log text into the input area, or upload a `.txt` log file.
+3. Paste your raw log text into the input area, or upload a `.log` log file.
 4. Optionally enter comma-separated character names in the whitelist.
 5. Optionally select a start date and/or end date.
 6. Toggle system message removal and timestamp trimming as needed.
