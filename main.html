@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RP Log Editor & Filter</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>RP Log Editor & Filter</h1>
+
+    <div class="grid">
+        <!-- Input Section -->
+        <div class="full-width">
+            <label for="logInput">Paste Logs Here:</label>
+            <textarea id="logInput" placeholder="[15.07.2026 16:04:17] (=)&quot;Velvet.Knife&quot;: i need to play rise of the reds again..."></textarea>
+            
+            <label for="fileInput" style="margin-top: 15px;">Or Upload a .txt Log File:</label>
+            <input type="file" id="fileInput" accept=".txt">
+        </div>
+
+        <!-- Filter Options -->
+        <div class="full-width">
+            <label for="whitelist">Name Whitelist (Comma-separated):</label>
+            <input type="text" id="whitelist" placeholder="e.g. Velvet.Knife, Oder_Supply, Colossus.Prime">
+            <div class="note">Leave blank to keep all names. If names are entered, only lines containing these names will be kept.</div>
+        </div>
+
+        <div>
+            <label for="startDate">Start Date:</label>
+            <input type="date" id="startDate">
+        </div>
+        <div>
+            <label for="endDate">End Date:</label>
+            <input type="date" id="endDate">
+        </div>
+
+        <div class="full-width options-group">
+            <div class="checkbox-container">
+                <input type="checkbox" id="removeSystem" checked>
+                <label for="removeSystem" style="margin: 0;">Remove System Messages (Welcome, Rules, Traffic, Deaths, Bots, etc.)</label>
+            </div>
+            <div class="checkbox-container">
+                <input type="checkbox" id="cutDate">
+                <label for="cutDate" style="margin: 0;">Cut Timestamps / Dates from lines</label>
+            </div>
+        </div>
+
+        <!-- Process Button -->
+        <div class="full-width">
+            <button id="processBtn">Process Logs</button>
+        </div>
+
+        <!-- Output Section -->
+        <div class="full-width">
+            <label for="logOutput">Filtered Output:</label>
+            <textarea id="logOutput" readonly placeholder="Your cleaned logs will appear here..."></textarea>
+        </div>
+    </div>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
