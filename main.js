@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const endDateStr = document.getElementById('endDate').value;
         const removeSystem = document.getElementById('removeSystem').checked;
         const cutDate = document.getElementById('cutDate').checked;
+        const removeOOC = document.getElementById('removeOOC').checked;
 
         // Parse dates for filtering
         let startDate = startDateStr ? new Date(startDateStr) : null;
@@ -72,7 +73,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (endDate && lineDate > endDate) continue;
             }
 
-            // 2. Filter out System Messages
+            // 2. Filter out OOC chatter
+            if (removeOOC && line.match(/\[ooc\]/i)) {
+                continue;
+            }
+
+            // 3. Filter out System Messages
             if (removeSystem) {
                 let isSystemMessage = false;
                 
@@ -92,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (isSystemMessage) continue;
             }
 
-            // 3. Filter by Name Whitelist
+            // 4. Filter by Name Whitelist
             if (whitelist.length > 0) {
                 let hasWhitelistedName = false;
                 const lowerLine = line.toLowerCase();

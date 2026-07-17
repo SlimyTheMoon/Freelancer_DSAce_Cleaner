@@ -9,9 +9,10 @@ Use it to remove system noise, narrow logs by date, and extract only the player 
 - **Fully local** — runs entirely in your web browser, with no uploads or external services.
 - **Paste or upload logs** — supports raw log text or `.log` log files.
 - **System message removal** — filters welcome text, rules tips, traffic alerts, death notices, bot announcements, and console spam.
+- **OOC chatter removal** — removes lines marked with `[OOC]` from the output.
 - **Name whitelist** — keep only lines containing one or more player names.
 - **Date range filtering** — include logs only from the selected start/end dates.
-- **Timestamp trimming** — remove the leading `[DD.MM.YYYY HH:MM:SS]` prefix for cleaner output.
+- **Timestamp trimming** — remove the leading `[DD.MM.YYYY HH:MM:SS]` prefix for cleaner output. This option is enabled by default.
 - **Dark UI** — a simple, easy-to-read dark theme.
 
 ## 🚀 Usage
