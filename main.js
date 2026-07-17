@@ -51,14 +51,21 @@ document.addEventListener('DOMContentLoaded', () => {
             " lost a fight with ", " was taken out by ", " was blown out of the stars",
             " met their end thanks to ", " got divebombed by ", " life support went offline thanks to ",
             "Access Denied!", "You have drawn ", "You have sent ", "Reputation dropped",
-            "has restricted access to", "has begun docking on", "Docking in", "Successfully docked",
+            "has begun docking on", "Docking in", "Successfully docked",
             "Launched from the carrier", "Position "
         ];
 
         const lines = input.split('\n');
         const result = [];
+        let skipNextLine = false;
 
-        for (let line of lines) {
+        for (let i = 0; i < lines.length; i++) {
+            let line = lines[i];
+            if (skipNextLine) {
+                skipNextLine = false;
+                continue;
+            }
+
             if (!line.trim()) continue; // Ignore completely empty lines
 
             // 1. Filter by Date
@@ -95,7 +102,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     isSystemMessage = true;
                 }
 
-                if (isSystemMessage) continue;
+                if (isSystemMessage) {
+                    if (line.includes('[ Warning ]')) {
+                        skipNextLine = true;
+                    }
+                    continue;
+                }
             }
 
             // 4. Filter by Name Whitelist
