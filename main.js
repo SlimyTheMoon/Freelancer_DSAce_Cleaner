@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
             " lost a fight with ", " was taken out by ", " was blown out of the stars",
             " met their end thanks to ", " got divebombed by ", " life support went offline thanks to ",
             "Access Denied!", "You have drawn ", "You have sent ", "Reputation dropped",
-            "has begun docking on", "Docking in", "Successfully docked",
+            "has restricted access to", "has begun docking on", "Docking in", "Successfully docked",
             "Launched from the carrier", "Position "
         ];
 
