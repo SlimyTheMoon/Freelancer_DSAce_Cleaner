@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const startDateStr = document.getElementById('startDate').value;
         const endDateStr = document.getElementById('endDate').value;
         const removeSystem = document.getElementById('removeSystem').checked;
-        const cutDate = !document.getElementById('cutDate').checked;
+        const cutDate = document.getElementById('cutDate').checked;
         const removeOOC = document.getElementById('removeOOC').checked;
 
         // Parse dates for filtering
